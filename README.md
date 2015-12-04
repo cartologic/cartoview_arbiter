@@ -1,5 +1,5 @@
-# Cartoview Arbiter
-Arbiter is a mobile app that lets you build a map to use for situational awareness and geospatial data collection
+# Arbiter Data Collection
+Configure maintenance and data collection applications by using Arbiter with [Cartoview](http://cartoview.org) and [GeoNode](http://geonode.org) to build a map to use for situational awareness and geospatial data collection
 
 ### Requirments
 Install [Cartoview](https://github.com/cartologic/cartoview)
