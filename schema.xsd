@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:geonode="http://www.geonode.org/" xmlns:gml="http://www.opengis.net/gml" elementFormDefault="qualified" targetNamespace="http://www.geonode.org/">
+  <xsd:import namespace="http://www.opengis.net/gml" schemaLocation="http://localhost:8080/geoserver/schemas/gml/2.1.2/feature.xsd"/>
+  <xsd:complexType name="signType">
+    <xsd:complexContent>
+      <xsd:extension base="gml:AbstractFeatureType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="the_geom" nillable="true" type="gml:PointPropertyType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="FACILITYID" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ATTACHID" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SIGNTYPE" nillable="true">
+			<xsd:simpleType>
+			  <xsd:restriction base="xsd:string">
+				  <xsd:enumeration value="Regulatory"/>
+				  <xsd:enumeration value="Warning"/>
+				  <xsd:enumeration value="country"/>
+				  <xsd:enumeration value="Guide"/>
+				  <xsd:enumeration value="Other"/>
+				  <xsd:enumeration value="Unknown"/>
+			  </xsd:restriction>
+			</xsd:simpleType>
+		  </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SIGNHEIGHT" nillable="true" type="xsd:double"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SIGNWIDTH" nillable="true" type="xsd:double"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SIGNSTYLE" nillable="true" >
+		  	<xsd:simpleType>
+			  <xsd:restriction base="xsd:string">
+				  <xsd:enumeration value="R1-1"/>
+				  <xsd:enumeration value="R1-2"/>
+				  <xsd:enumeration value="R1-3W"/>
+				  <xsd:enumeration value="R1-4W"/>
+				  <xsd:enumeration value="R2-1"/>
+				  <xsd:enumeration value="R2-5C"/>
+				  <xsd:enumeration value="R3-1"/>
+				  <xsd:enumeration value="R3-2"/>
+				  <xsd:enumeration value="R3-5L"/>
+				  <xsd:enumeration value="R3-5R"/>
+				  <xsd:enumeration value="R3-5a"/>
+				  <xsd:enumeration value="R3-7L"/>
+				  <xsd:enumeration value="R3-7R"/>
+				  <xsd:enumeration value="R3-16"/>
+				  <xsd:enumeration value="R4-7a"/>
+				  <xsd:enumeration value="R4-7b"/>
+				  <xsd:enumeration value="R5-1"/>
+				  <xsd:enumeration value="R5-1a"/>
+				  <xsd:enumeration value="R5-2"/>
+				  <xsd:enumeration value="R5-2a"/>
+				  <xsd:enumeration value="R6-1(R)"/>
+				  <xsd:enumeration value="R6-1(L)"/>
+				  <xsd:enumeration value="R6-2(R)"/>
+				  <xsd:enumeration value="R8-3"/>
+				  <xsd:enumeration value="R10-6"/>
+				  <xsd:enumeration value="R10-11"/>
+				  <xsd:enumeration value="R10-11b"/>
+				  <xsd:enumeration value="R10-12"/>
+				  <xsd:enumeration value="R11-2"/>
+				  <xsd:enumeration value="R11-3a"/>
+				  <xsd:enumeration value="R11-4"/>
+				  <xsd:enumeration value="R12-5"/>
+				  <xsd:enumeration value="W1-1L"/>
+				  <xsd:enumeration value="W1-1R"/>
+				  <xsd:enumeration value="W1-2L"/>
+				  <xsd:enumeration value="W1-2R"/>
+				  <xsd:enumeration value="W1-3L"/>
+				  <xsd:enumeration value="W1-3R"/>
+				  <xsd:enumeration value="W1-4L"/>
+				  <xsd:enumeration value="W1-4R"/>
+				  <xsd:enumeration value="W1-5L"/>
+				  <xsd:enumeration value="W1-5R"/>
+				  <xsd:enumeration value="W1-6L"/>
+				  <xsd:enumeration value="W1-6R"/>
+				  <xsd:enumeration value="W1-7"/>
+				  <xsd:enumeration value="W1-8L"/>
+				  <xsd:enumeration value="W1-8R"/>
+				  <xsd:enumeration value="W2-1"/>
+				  <xsd:enumeration value="W2-2L"/>
+				  <xsd:enumeration value="W2-2R"/>
+				  <xsd:enumeration value="W2-4"/>
+				  <xsd:enumeration value="W3-1"/>
+				  <xsd:enumeration value="W3-2"/>
+				  <xsd:enumeration value="W3-3"/>
+				  <xsd:enumeration value="W4-5"/>
+				  <xsd:enumeration value="W6-1"/>
+				  <xsd:enumeration value="W6-2"/>
+				  <xsd:enumeration value="W6-3"/>
+				  <xsd:enumeration value="W8-5"/>
+				  <xsd:enumeration value="W8-9"/>
+				  <xsd:enumeration value="W9-1"/>
+				  <xsd:enumeration value="W9-2"/>
+				  <xsd:enumeration value="W9-2 alternate"/>
+				  <xsd:enumeration value="W10-1"/>
+				  <xsd:enumeration value="W11-2"/>
+				  <xsd:enumeration value="W11-8"/>
+				  <xsd:enumeration value="W13-1"/>
+				  <xsd:enumeration value="W14-1"/>
+				  <xsd:enumeration value="W14-2"/>
+				  <xsd:enumeration value="W17-1"/>
+				  <xsd:enumeration value="W20-2"/>
+				  <xsd:enumeration value="W20-3"/>
+				  <xsd:enumeration value="W21-1a"/>
+				  <xsd:enumeration value="G20-2"/>
+				  <xsd:enumeration value="M4-8a"/>
+				  <xsd:enumeration value="M4-9R"/>
+				  <xsd:enumeration value="M4-9L"/>
+				  <xsd:enumeration value="M1-4"/>
+				  <xsd:enumeration value="M1-5"/>
+				  <xsd:enumeration value="M2-1"/>
+				  <xsd:enumeration value="M3-1"/>
+				  <xsd:enumeration value="M3-2"/>
+				  <xsd:enumeration value="M3-3"/>
+				  <xsd:enumeration value="M3-4"/>
+				  <xsd:enumeration value="M4-5"/>
+				  <xsd:enumeration value="M5-1L"/>
+				  <xsd:enumeration value="M5-1R"/>
+				  <xsd:enumeration value="M5-2L"/>
+				  <xsd:enumeration value="M5-2R"/>
+				  <xsd:enumeration value="M6-1L"/>
+				  <xsd:enumeration value="M6-1R"/>
+				  <xsd:enumeration value="M6-2L"/>
+				  <xsd:enumeration value="M6-2R"/>
+				  <xsd:enumeration value="M6-3"/>
+				  <xsd:enumeration value="M6-4"/>
+				  <xsd:enumeration value="M6-6R"/>
+				  <xsd:enumeration value="M6-6L"/>
+				  <xsd:enumeration value="M6-7R"/>
+				  <xsd:enumeration value="M6-7L"/>
+				  <xsd:enumeration value="M6-8"/>
+				  <xsd:enumeration value="M6-9"/>
+				  <xsd:enumeration value="D1-1c"/>
+				  <xsd:enumeration value="D7-1"/>
+				  <xsd:enumeration value="D7-2"/>
+				  <xsd:enumeration value="D9-2"/>
+				  <xsd:enumeration value="D9-6"/>
+				  <xsd:enumeration value="D9-14"/>
+				  <xsd:enumeration value="I-5"/>
+				  <xsd:enumeration value="Other"/>
+				  <xsd:enumeration value="Unknown"/>
+			  </xsd:restriction>
+			</xsd:simpleType>
+		  </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SIGNTEXT" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="FACING" nillable="true">
+			<xsd:simpleType>
+			  <xsd:restriction base="xsd:string">
+				  <xsd:enumeration value="East"/>
+				  <xsd:enumeration value="North"/>
+				  <xsd:enumeration value="South"/>
+				  <xsd:enumeration value="West"/>
+				  <xsd:enumeration value="Northeast"/>
+				  <xsd:enumeration value="Northwest"/>
+				  <xsd:enumeration value="Southeast"/>
+				  <xsd:enumeration value="Southwest"/>
+				  <xsd:enumeration value="North/South"/>
+				  <xsd:enumeration value="East/West"/>
+				  <xsd:enumeration value="Northeast/Northwest"/>
+				  <xsd:enumeration value="Southeast/Southwest"/>
+			  </xsd:restriction>
+			</xsd:simpleType>
+		  </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="HORIZCLEAR" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="HORIZFROM" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="VERTFROM" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ANGLE" nillable="true" type="xsd:int"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="DISTTOTOP" nillable="true" type="xsd:double"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="REFLCOAT" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SHEETING" nillable="true">
+			<xsd:simpleType>
+			  <xsd:restriction base="xsd:string">
+				  <xsd:enumeration value="Type I (Engineer Grade)"/>
+				  <xsd:enumeration value="Type II (Super Engineer Grade)"/>
+				  <xsd:enumeration value="Type III (High Intensity)"/>
+				  <xsd:enumeration value="Type IV (Multi-Layer Sheeting)"/>
+				  <xsd:enumeration value="Type V (Metallized Microprismatic)"/>
+				  <xsd:enumeration value="Type VI (Vinyl Backed Microprismatic)"/>
+				  <xsd:enumeration value="Type VII (Microprismatic)"/>
+				  <xsd:enumeration value="Type VIII (Microprismatic- Distinguishing)"/>
+				  <xsd:enumeration value="Type IX (Fine Grain Microprisms)"/>
+				  <xsd:enumeration value="Type X (Microprismatic - Similar to Types VII-IX)"/>
+				  <xsd:enumeration value="Unknown"/>				  
+			  </xsd:restriction>
+			</xsd:simpleType>
+		  </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="SUPMATERIA" nillable="true" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="INSTALLDAT" nillable="true" type="xsd:dateTime"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CONDITION" nillable="true">
+			<xsd:simpleType>
+			  <xsd:restriction base="xsd:string">
+				  <xsd:enumeration value="Excellent"/>
+				  <xsd:enumeration value="Very Good"/>
+				  <xsd:enumeration value="Good"/>
+				  <xsd:enumeration value="Fair"/>
+				  <xsd:enumeration value="Poor"/>
+				  <xsd:enumeration value="Very Poor"/>
+				  <xsd:enumeration value="Unknown"/>				  				  
+			  </xsd:restriction>
+			</xsd:simpleType>
+		  </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="OWNEDBY" nillable="true">
+			<xsd:simpleType>
+			  <xsd:restriction base="xsd:int">
+				  <xsd:enumeration value="1"/>
+				  <xsd:enumeration value="-1"/>
+				  <xsd:enumeration value="-2"/>				  				  				  
+			  </xsd:restriction>
+			</xsd:simpleType>
+		  </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MAINTBY" nillable="true" >
+			<xsd:simpleType>
+			  <xsd:restriction base="xsd:int">
+				  <xsd:enumeration value="1"/>
+				  <xsd:enumeration value="-1"/>
+				  <xsd:enumeration value="-2"/>				  				  				  
+			  </xsd:restriction>
+			</xsd:simpleType>
+		  </xsd:element>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LASTUPDATE" nillable="true" type="xsd:dateTime"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LASTEDITOR" nillable="true" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="sign" substitutionGroup="gml:_Feature" type="geonode:signType"/>
+</xsd:schema>
